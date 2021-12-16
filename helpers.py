@@ -74,4 +74,20 @@ def read_xyz(input_file):
                 z.append(frame.water_depth_m)
                 last = c
     return (x,y,z)
-      
+
+def read_into_geojson(input_file):
+    coords = list()
+    with open(input_file, 'rb') as f:
+        reader = sllib.Reader(f)
+        last = None
+        for frame in reader:
+            c = (frame.longitude, frame.latitude)
+            if c != last:
+                coords.append(c)
+                last = c
+
+    line = dict(type='Feature',
+                geometry=dict(type='LineString', coordinates=coords),
+                properties=dict())
+    data = dict(type='FeatureCollection', features=[line])
+    return data

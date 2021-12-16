@@ -1,6 +1,5 @@
 # Jupyter Notebooks for python-sllib
-This shoulb be regarded as a test/demo of what you can do with 
-data in the logfiles from your Lowrance plotter/sounder.
+Environment to test, visualize, and process Lowrance plotter/sounder data.
 All with the help of https://github.com/opensounder/python-sllib 
 for interpreting the actual files.
 
@@ -11,13 +10,23 @@ Also make sure that you have the sample-data submodule cloned.
 git submodule update --init --recursive
 ```
 
-# Examples of echogram
-There is an example of plotting a echogram but the procedure is not verified. 
-You will get an output that will look plausible at least.
+# Echogram (sonar image)
+Using the read_echogram.ipynb file, one can visualize and process sonar images such as 
 
 ![example echogram][output1]
 
-[output1]: images/output1.png "Example from SL2 file"
+[output1]: images/sss.png "Example from SL2 file"
+
+# Depthmap
+Using the depthmap.ipynb file, one can interpolate and plot a bathymetry map such as 
+
+![example echogram][output2]
+
+[output2]: images/depthmap.png "Example from SL2 file"
+
+# GeoJSON
+Using the geojson_on_map.ipynb file, one can visualize the trajectory of the sonar in a google maps like map called GeoJSON. 
+
 # Usage with Makefiles
 ```shell
 make build
