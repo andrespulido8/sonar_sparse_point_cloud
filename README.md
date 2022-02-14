@@ -1,4 +1,4 @@
-# Jupyter Notebooks for python-sllib
+# Side-Scan Sonar Data Processing using Jupyter Notebooks and python-sllib
 Environment to test, visualize, and process Lowrance plotter/sounder data.
 All with the help of https://github.com/opensounder/python-sllib 
 for interpreting the actual files.
