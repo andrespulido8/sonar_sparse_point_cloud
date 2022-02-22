@@ -7,3 +7,4 @@ private/
 venv/
 
 log-data-lowrance/*
+processed_data/*
