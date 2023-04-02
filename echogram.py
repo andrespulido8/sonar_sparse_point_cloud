@@ -9,11 +9,11 @@ class EchoGram:
         df - pandas dataframe (table) with columns of useful measurements such as depth
         data - raw table used to create self.df
     """
-    def __init__(self, filename, channels=None):
+    def __init__(self, filename, channels=None, x0=-9147145.64754388, y0=3427601.097538607):
         self.filename = filename
         self.data, self.echo = self.test_overlay_wb_echo(filename, channels)
         self.df = pd.DataFrame(self.data)
-        self.lat_lon_to_meters(self.df["longitude"].to_numpy(), self.df["latitude"].to_numpy())
+        self.lon_lat_to_meters(self.df["longitude"].to_numpy(), self.df["latitude"].to_numpy(), x0, y0)
         self.initialize_point_cloud()
         
         del self.data
@@ -44,7 +44,7 @@ class EchoGram:
         #fig.savefig('sss.png', dpi=fig.dpi)
         return data, echo
     
-    def lat_lon_to_meters(self, lon, lat, x0=-9147145.64754388, y0=3427601.097538607):
+    def lon_lat_to_meters(self, lon, lat, x0=-9147145.64754388, y0=3427601.097538607):
         """ Convert longitude and latitude to global X and Y coordinates in meters
             Inputs:
                 lon: longitude 
