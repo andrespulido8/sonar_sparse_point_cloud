@@ -6,5 +6,6 @@ __pycache__/
 private/
 venv/
 
-log-data-lowrance/*
+log-data/*
 processed_data/*
+processed_images/*
