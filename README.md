@@ -58,3 +58,6 @@ install:
 ```shell
 pip install pykrige
 ```
+
+# Data
+The sl2 files and the csv files are stored in the [APRILab Google Drive](https://drive.google.com/drive/folders/1K57onShdPBO5McJBp5whlUoWPsp_cfui)
