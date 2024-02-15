@@ -1,9 +1,10 @@
-# Side-Scan Sonar Data Processing using Jupyter Notebooks and python-sllib
-Environment to test, visualize, and process Lowrance plotter/sounder data.
-All with the help of https://github.com/opensounder/python-sllib 
-for interpreting the actual files.
+## Code for the paper: The Bathy-Drone: An autonomous uncrewed drone-tethered sonar system 
+Here we generate a sparse point cloud using a downscan and the first return of the side-scan image. Additionally, 
+we generate the images for an object detection algorithm like YOLO. 
 
-You will need to have docker installed on your machine to follow the instructions.
+All with the help of https://github.com/andrespulido8/side_scan_sonar_jupyter_notebook
+
+To run the jupyter notebook is recommended to have docker installed on your machine to follow the instructions.
 Also make sure that you have the sample-data submodule cloned.
 
 ```shell
@@ -11,21 +12,11 @@ git submodule update --init --recursive
 ```
 
 # Echogram (sonar image)
-Using the read_echogram.ipynb file, one can visualize and process sonar images such as 
+Using the `precision.ipynb` file, one can visualize and process sonar data to perform the precision analysis 
 
 ![example echogram][output1]
 
-[output1]: images/sss.png "Example from SL2 file"
-
-# Depthmap
-Using the depthmap.ipynb file, one can interpolate and plot a bathymetry map such as 
-
-![example echogram][output2]
-
-[output2]: images/depthmap.png "Example from SL2 file"
-
-# GeoJSON
-Using the geojson_on_map.ipynb file, one can visualize the trajectory of the sonar in a google maps like map called GeoJSON. 
+[output1]: paper_figures/error_hist.png "Histogram of precision"
 
 # Usage with Makefiles
 ```shell
@@ -36,7 +27,6 @@ make run
 # follow the instructions that and browse to the link provided by 
 # jupyter in the end
 ```
-
 
 # Usage from PowerShell
 Could be from you linux terminal as well but you will have to make some adjustments.
@@ -50,13 +40,6 @@ docker build -t sllib-scipy-notebook -f containers/Dockerfile containers/
 docker run --rm -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes `
     -v "${PWD}:/home/jovyan/work" `
     sllib-scipy-notebook
-```
-
-## Dependencies
-- PyKrige
-install: 
-```shell
-pip install pykrige
 ```
 
 # Data
