@@ -12,11 +12,11 @@ git submodule update --init --recursive
 ```
 
 # Echogram (sonar image)
-Using the `precision.ipynb` file, one can visualize and process sonar data to perform the precision analysis 
+The main files to use are `read_echogram.ipynb` and the other notebook files. 
 
 ![example echogram][output1]
 
-[output1]: paper_figures/error_hist.png "Histogram of precision"
+[output1]: images/echo_2022-05-17_1_3.png "Side scan sonar with object"
 
 # Usage with Makefiles
 ```shell
