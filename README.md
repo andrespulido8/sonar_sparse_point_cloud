@@ -1,4 +1,5 @@
-## Code for the paper: The Bathy-Drone: An autonomous uncrewed drone-tethered sonar system 
+## Code for the paper: Time and Cost-Efficient Bathymetric Mapping System using Sparse Point Cloud Generation and Automatic Object Detection
+ 
 Here we generate a sparse point cloud using a downscan and the first return of the side-scan image. Additionally, 
 we generate the images for an object detection algorithm like YOLO. 
 
